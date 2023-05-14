@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нотатки</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    
+    <div class="form-wrapper">
+        <form>
+            <textarea type="text" id="note" placeholder="Нова замітка"></textarea>
+            <br>
+            <button type="submit">Додати</button>
+        </form>
+    </div>
+    <div class="form-expand form-disabled">+</div>
+
+    <hr>
+    <h1>Нотатки</h1>
+    <label for="date-filter">Фільтр за датою створення:</label>
+    <input type="date" id="date-filter">
+    <button id="filter-button">Фільтрувати</button>
+    <ul id="notes-list"></ul>
+    <script src="notes.js"></script>
+</body>
+</html>
