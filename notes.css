@@ -8,14 +8,14 @@
     min-width: 40vw;
     max-width: 80vw;
     min-height: 20vh;
-    max-height: 70vh;
+    max-height: 58vh;
     display: block;
     margin: 0 auto;
     padding: 10px;
     font-size: 20px;
 }
 
-.form-wrapper {
+.form-wrapper, .find-wrapper {
     width: 100vw;
     height: 80vh;
     margin-inline: auto;
@@ -23,7 +23,7 @@
     background-color: rgba(114, 186, 222, 0.8);
 }
 
-.form-expand {
+.form-expand, .find-expand {
     width: 160px;
     height: 160px;
     background-color: brown;
@@ -32,6 +32,7 @@
     text-align: center;
     color: aliceblue;
     text-shadow: 2px -2px 3px yellow;
+    z-index: 2;
 }
 
 .form-disabled {
@@ -58,4 +59,109 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+
+form {
+    padding-top: 30px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    background-color: green;
+    color: antiquewhite;
+    padding: 15px 30px;
+    border: none;
+    font-size: large;
+}
+
+button:hover {
+    box-shadow: 3px 3px 5px red;
+}
+
+.find-disabled {
+    position: fixed;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 70px;
+    line-height: 70px;
+}
+
+.find-enabled {
+    position: fixed;
+    bottom: calc(80vh - 80px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 160px;
+    line-height: 100px;
+}
+
+.find-active {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.find-wrapper {
+    padding: 160px;
+    text-align: center;
+}
+
+.find-wrapper label {
+    display: block;
+    margin-block: 20px;
+    font-size: 1.5rem;
+}
+
+.find-wrapper input {
+    width: 20%;
+    height: 2rem;
+    font-size: 1.5rem;
+    padding-left: 5px;
+}
+
+h1 {
+    margin-top: 90px;
+    text-align: center;
+}
+
+ul {
+    margin-left: 2vw;
+    list-style: none;
+    max-height: calc(100vh - 220px);
+    overflow-y: scroll;
+}
+
+li {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    border-bottom: 2px dashed greenyellow;
+    width: 96vw;
+}
+
+@media (max-width: 650px) {
+    .find-wrapper input {
+        width: 95%;
+        height: 2rem;
+        font-size: 1.5rem;
+        padding-left: 5px;
+    }
+    
+    .find-wrapper {
+        padding-block: 160px;
+        padding-inline: 0;
+        text-align: center;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 1230px) {
+    .find-wrapper input {
+        width: 60%;
+        height: 2rem;
+        font-size: 1.5rem;
+        padding-left: 5px;
+    }
 }

@@ -18,11 +18,16 @@
     </div>
     <div class="form-expand form-disabled">+</div>
 
-    <hr>
     <h1>Нотатки</h1>
-    <label for="date-filter">Фільтр за датою створення:</label>
-    <input type="date" id="date-filter">
-    <button id="filter-button">Фільтрувати</button>
+    <div class="find-expand find-disabled">&#1422</div>
+    <section class="find-wrapper">
+        <label for="date-filter">Фільтр за датою створення:</label>
+        <input type="date" id="date-filter">
+        <button id="filter-button">Фільтрувати</button>
+        <label for="find">Пошук за словом:</label>
+        <input type="text" id="find">
+        <button id="find-button">Пошук</button>
+    </section>
     <ul id="notes-list"></ul>
     <script src="notes.js"></script>
 </body>
