@@ -8,6 +8,9 @@ const findString = document.getElementById("find");
 const findButton = document.getElementById("find-button");
 const findExpand = document.querySelector(".find-expand");
 const findWrapper = document.querySelector(".find-wrapper");
+const exportButton = document.getElementById("export-button");
+const importButton = document.getElementById("import-button");
+const importFile = document.getElementById("import-file");
 
 formExpand.addEventListener('click', () => {
     if (formExpand.classList.contains("form-disabled")) {
@@ -55,6 +58,8 @@ document.querySelector("form").addEventListener("submit", (e) => {
 filterButton.addEventListener("click", filterNotes);
 findButton.addEventListener("click", findNotes);
 noteInput.addEventListener('input', autoresize);
+exportButton.addEventListener("click", saveBackup);
+importButton.addEventListener("click", uploadBackup);
 
 let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
@@ -102,4 +107,26 @@ function findNotes() {
     });
     findString.value = '';
     findedNotes.length > 0 ? renderNotes(findedNotes) : renderNotes([{text: 'not found', date: 'try another word'}]);
+}
+
+function saveBackup() {
+    const data = localStorage.getItem("notes");
+    const blob = new Blob([data], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'backup_notes.json';
+    link.click();
+}
+
+function uploadBackup() {
+    const file = importFile.files[0];
+    const reader = new FileReader();
+    reader.readAsText(file);
+    reader.onload = function(e) {
+        const fileData = e.target.result;
+        localStorage.setItem('notes', fileData);
+        let backNotes = JSON.parse(localStorage.getItem("notes"));
+        renderNotes(backNotes);
+    }
 }

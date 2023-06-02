@@ -142,6 +142,16 @@ li {
     width: 96vw;
 }
 
+.import-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#import-file {
+    min-width: 35%;
+}
+
 @media (max-width: 650px) {
     .find-wrapper input {
         width: 95%;
